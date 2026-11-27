@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node src/index.js",
-    "test": "node src/converter/test.js",
+    "test": "node src/converter/test.js && node src/routes/procedures.test.js",
+    "test:converter": "node src/converter/test.js",
+    "test:api": "node src/routes/procedures.test.js",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push"
   },

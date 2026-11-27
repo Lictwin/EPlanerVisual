@@ -33,13 +33,18 @@ app.use((req, res) => {
 });
 
 app.use((err, req, res, next) => {
+  if (err && err.type === 'entity.parse.failed') {
+    return res.status(400).json({ error: 'Некорректный JSON в теле запроса' });
+  }
   console.error('Необработанная ошибка сервера:', err);
   res.status(500).json({ error: 'Внутренняя ошибка сервера' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Сервер запущен на http://localhost:${PORT}`);
-  console.log(`API доступно по http://localhost:${PORT}/api/procedures`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Сервер запущен на http://localhost:${PORT}`);
+    console.log(`API доступно по http://localhost:${PORT}/api/procedures`);
+  });
+}
 
 module.exports = app;
