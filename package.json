@@ -1,0 +1,25 @@
+{
+  "name": "eplanervisual",
+  "version": "1.0.0",
+  "description": "Содержит визуальную часть для рисования последовательности работы программы",
+  "main": "index.js",
+    "scripts": {
+    "install:all": "cd frontend && npm install && cd ../backend && npm install && npx prisma db push",
+    "dev": "concurrently \"cd frontend && npm run dev\" \"cd backend && npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lictwin/EPlanerVisual.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lictwin/EPlanerVisual/issues"
+  },
+  "homepage": "https://github.com/Lictwin/EPlanerVisual#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
